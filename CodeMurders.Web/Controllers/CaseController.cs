@@ -38,4 +38,48 @@ public class CaseController : Controller
 
         return View(logEntries);
     }
+
+    public IActionResult Commits()
+    {
+        var commitEntries = new List<CommitEntry>
+        {
+            new()
+            {
+                Hash = "8f3a2c1",
+                Author = "Ethan Cole",
+                Timestamp = "01:18 AM",
+                Message = "Add caching layer for product lookups",
+                ChangedFiles = new List<string>
+                {
+                    "Services/ProductCacheService.cs",
+                    "Program.cs"
+                }
+            },
+            new()
+            {
+                Hash = "b7d91e4",
+                Author = "Maya Brooks",
+                Timestamp = "01:52 AM",
+                Message = "Simplify order validation flow",
+                ChangedFiles = new List<string>
+                {
+                    "Services/OrderValidationService.cs",
+                    "Controllers/OrderController.cs"
+                }
+            },
+            new()
+            {
+                Hash = "c4e82aa",
+                Author = "Noah Reed",
+                Timestamp = "02:03 AM",
+                Message = "Fix checkout button alignment",
+                ChangedFiles = new List<string>
+                {
+                    "wwwroot/css/checkout.css"
+                }
+            }
+        };
+
+        return View(commitEntries);
+    }
 }

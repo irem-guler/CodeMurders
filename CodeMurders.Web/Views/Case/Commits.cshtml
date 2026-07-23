@@ -1,0 +1,36 @@
+@model List<CodeMurders.Web.Models.CommitEntry>
+@{
+    ViewData["Title"] = "Commit History";
+}
+
+<section class="case-header">
+    <h1 class="case-header-title">Commit History</h1>
+    <p class="logs-subtitle">The Midnight Order Service Crash</p>
+</section>
+
+<section class="commits-section">
+    @foreach (var commit in Model)
+    {
+        <div class="commit-card">
+            <div class="commit-card-header">
+                <span class="commit-hash">@commit.Hash</span>
+                <span class="commit-timestamp">@commit.Timestamp</span>
+            </div>
+            <p class="commit-message">@commit.Message</p>
+            <p class="commit-author">Author: @commit.Author</p>
+            <div class="commit-files">
+                <span class="commit-files-label">Changed files:</span>
+                <ul class="commit-files-list">
+                    @foreach (var file in commit.ChangedFiles)
+                    {
+                        <li>@file</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</section>
+
+<div class="back-link-section">
+    <a asp-controller="Case" asp-action="Details" class="btn btn-outline-light">Back to Case</a>
+</div>
