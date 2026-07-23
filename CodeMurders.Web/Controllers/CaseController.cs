@@ -82,4 +82,29 @@ public class CaseController : Controller
 
         return View(commitEntries);
     }
+
+    public IActionResult Code()
+    {
+        var codeFile = new CodeFile
+        {
+            FilePath = "Services/OrderValidationService.cs",
+            CommitHash = "b7d91e4",
+            CommitMessage = "Simplify order validation flow",
+            BeforeCode = "public ValidationResult Validate(Order order)\n" +
+                         "{\n" +
+                         "    if (order.ShippingAddress == null)\n" +
+                         "    {\n" +
+                         "        return ValidationResult.Fail(\"Shipping address is required.\");\n" +
+                         "    }\n" +
+                         "\n" +
+                         "    return ValidationResult.Success();\n" +
+                         "}",
+            AfterCode = "public ValidationResult Validate(Order order)\n" +
+                        "{\n" +
+                        "    return ValidationResult.Success();\n" +
+                        "}"
+        };
+
+        return View(codeFile);
+    }
 }

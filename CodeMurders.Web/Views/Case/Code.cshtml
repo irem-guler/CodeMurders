@@ -1,0 +1,69 @@
+@model CodeMurders.Web.Models.CodeFile
+@{
+    ViewData["Title"] = "Code Analysis";
+
+    var beforeLines = Model.BeforeCode.Split('\n');
+    var afterLines = Model.AfterCode.Split('\n');
+
+    var removedFlags = new bool[beforeLines.Length];
+    var afterIndex = 0;
+    for (var beforeIndex = 0; beforeIndex < beforeLines.Length; beforeIndex++)
+    {
+        if (afterIndex < afterLines.Length && beforeLines[beforeIndex].TrimEnd() == afterLines[afterIndex].TrimEnd())
+        {
+            afterIndex++;
+        }
+        else
+        {
+            removedFlags[beforeIndex] = true;
+        }
+    }
+}
+
+<section class="case-header">
+    <h1 class="case-header-title">Code Analysis</h1>
+    <p class="logs-subtitle">The Midnight Order Service Crash</p>
+</section>
+
+<section class="code-meta-section">
+    <div class="code-meta-card">
+        <div><span class="code-meta-label">File:</span> <span class="code-file-path">@Model.FilePath</span></div>
+        <div><span class="code-meta-label">Commit:</span> <span class="commit-hash">@Model.CommitHash</span></div>
+        <div><span class="code-meta-label">Message:</span> @Model.CommitMessage</div>
+    </div>
+</section>
+
+<section class="code-diff-section">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <h2 class="section-heading">Before</h2>
+            <div class="code-block">
+                @for (var i = 0; i < beforeLines.Length; i++)
+                {
+                    <div class="code-line @(removedFlags[i] ? "code-line-removed" : "")">
+                        <span class="code-line-number">@(i + 1)</span>
+                        <span class="code-line-marker">@(removedFlags[i] ? "-" : "")</span>
+                        <span class="code-line-text">@beforeLines[i]</span>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h2 class="section-heading">After</h2>
+            <div class="code-block">
+                @for (var i = 0; i < afterLines.Length; i++)
+                {
+                    <div class="code-line">
+                        <span class="code-line-number">@(i + 1)</span>
+                        <span class="code-line-marker"></span>
+                        <span class="code-line-text">@afterLines[i]</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="back-link-section">
+    <a asp-controller="Case" asp-action="Details" class="btn btn-outline-light">Back to Case</a>
+</div>
