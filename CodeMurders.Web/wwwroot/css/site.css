@@ -160,3 +160,69 @@ footer.footer a {
   border-radius: 999px;
   white-space: nowrap;
 }
+
+/* Case detail page */
+
+.case-header {
+  padding: 2rem 0 1rem;
+}
+
+.case-status-badge {
+  display: inline-block;
+  background-color: #1f6feb;
+  color: #f0f6fc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.case-header-title {
+  color: #f0f6fc;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.case-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  color: #8b949e;
+  margin-top: 0.75rem;
+}
+
+.case-detail-section {
+  padding: 1rem 0;
+}
+
+.section-heading {
+  color: #f0f6fc;
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.case-text {
+  color: #c9d1d9;
+  max-width: 760px;
+}
+
+.evidence-section {
+  padding: 1rem 0 2rem;
+}
+
+.evidence-card-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.evidence-card-disabled p {
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.back-link-section {
+  padding: 1rem 0 3rem;
+}

@@ -1,0 +1,49 @@
+@model CodeMurders.Web.Models.Case
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="case-header">
+    <span class="case-status-badge">@Model.Status</span>
+    <h1 class="case-header-title">@Model.Title</h1>
+    <div class="case-meta">
+        <span><strong>Incident Time:</strong> @Model.IncidentTime</span>
+        <span><strong>Severity:</strong> @Model.Severity</span>
+    </div>
+</section>
+
+<section class="case-detail-section">
+    <h2 class="section-heading">Case Description</h2>
+    <p class="case-text">@Model.Description</p>
+
+    <h2 class="section-heading">Objective</h2>
+    <p class="case-text">@Model.Objective</p>
+</section>
+
+<section class="evidence-section">
+    <h2 class="section-heading">Evidence</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card evidence-card-disabled">
+                <h3>Inspect Logs</h3>
+                <p>Coming soon</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card evidence-card-disabled">
+                <h3>Review Commits</h3>
+                <p>Coming soon</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card evidence-card-disabled">
+                <h3>Analyze Code</h3>
+                <p>Coming soon</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="back-link-section">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light">Back to Home</a>
+</div>
