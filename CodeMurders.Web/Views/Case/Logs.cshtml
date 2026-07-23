@@ -1,0 +1,27 @@
+@model List<CodeMurders.Web.Models.LogEntry>
+@{
+    ViewData["Title"] = "Investigation Logs";
+}
+
+<section class="case-header">
+    <h1 class="case-header-title">Investigation Logs</h1>
+    <p class="logs-subtitle">The Midnight Order Service Crash</p>
+</section>
+
+<section class="logs-section">
+    <div class="log-console">
+        @foreach (var entry in Model)
+        {
+            <div class="log-line log-level-@entry.Level.ToLowerInvariant()">
+                <span class="log-timestamp">@entry.Timestamp</span>
+                <span class="log-level">@entry.Level</span>
+                <span class="log-source">@entry.Source</span>
+                <span class="log-message">@entry.Message</span>
+            </div>
+        }
+    </div>
+</section>
+
+<div class="back-link-section">
+    <a asp-controller="Case" asp-action="Details" class="btn btn-outline-light">Back to Case</a>
+</div>

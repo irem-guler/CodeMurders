@@ -226,3 +226,90 @@ footer.footer a {
 .back-link-section {
   padding: 1rem 0 3rem;
 }
+
+.evidence-card-active {
+  display: block;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.evidence-card-active:hover {
+  border-color: #58a6ff;
+  transform: translateY(-2px);
+}
+
+.evidence-card-active p {
+  color: #8b949e;
+  margin-bottom: 0;
+}
+
+/* Logs page */
+
+.logs-subtitle {
+  color: #8b949e;
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+.logs-section {
+  padding: 1rem 0 2rem;
+}
+
+.log-console {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+.log-line {
+  display: flex;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #21262d;
+  color: #c9d1d9;
+  white-space: nowrap;
+}
+
+.log-line:last-child {
+  border-bottom: none;
+}
+
+.log-timestamp {
+  color: #8b949e;
+  flex: 0 0 auto;
+}
+
+.log-level {
+  flex: 0 0 5.5rem;
+  font-weight: 700;
+}
+
+.log-source {
+  flex: 0 0 auto;
+  color: #58a6ff;
+}
+
+.log-message {
+  white-space: normal;
+}
+
+.log-level-warning {
+  color: #d29922;
+}
+
+.log-level-error {
+  color: #f85149;
+}
+
+.log-level-error .log-message,
+.log-level-error .log-level {
+  color: #f85149;
+}
+
+.log-level-warning .log-message,
+.log-level-warning .log-level {
+  color: #d29922;
+}
