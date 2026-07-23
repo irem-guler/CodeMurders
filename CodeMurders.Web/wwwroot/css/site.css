@@ -19,4 +19,144 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+a {
+  color: #58a6ff;
+}
+
+.navbar {
+  background-color: #161b22 !important;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #c9d1d9 !important;
+}
+
+footer.footer {
+  background-color: #0d1117;
+  border-top-color: #30363d !important;
+}
+
+footer.footer a {
+  color: #8b949e;
+}
+
+/* Landing page */
+
+.hero {
+  padding: 4rem 1rem 3rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f0f6fc;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #ff6b6b;
+  font-family: "Consolas", "Courier New", monospace;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  color: #8b949e;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  background-color: #da3633;
+  border-color: #da3633;
+}
+
+.btn-hero-primary:hover {
+  background-color: #f85149;
+  border-color: #f85149;
+}
+
+.btn-hero-secondary {
+  color: #c9d1d9;
+  border-color: #30363d;
+}
+
+.btn-hero-secondary:hover {
+  background-color: #21262d;
+  color: #f0f6fc;
+  border-color: #30363d;
+}
+
+.features-section {
+  padding: 2rem 0;
+}
+
+.feature-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.feature-card h3 {
+  color: #f0f6fc;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: #8b949e;
+  margin-bottom: 0;
+}
+
+.case-section {
+  padding: 2rem 0 3rem;
+}
+
+.case-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.case-label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #8b949e;
+}
+
+.case-title {
+  font-size: 1.25rem;
+  color: #f0f6fc;
+  margin: 0.25rem 0 0;
+}
+
+.case-status {
+  background-color: #30363d;
+  color: #c9d1d9;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
 }
